@@ -198,7 +198,7 @@ python train.py --model_type lambdarank
 The first run of the script will automatically download the data and train the LambdaRank model and store the model of each round.
 
 #### LambdaRank model prediction
-The prediction process of the LambdaRank model is the same as RankNet. The model's topology in the prediction model reuses the model definition in the code and loads the corresponding parameter file from the external memory. The input during the forecast is a document list, and the output is the relevance score of each document in the document list. The document is re-sorted according to the score, to obtaine the final document's sorting result. 
+The prediction process of the LambdaRank model is the same as RankNet. The model's topology in the prediction model reuses the model definition in the code and loads the corresponding parameter file from the external memory. The input during the forecast is a document list, and the output is the relevance score of each document in the document list. The document is re-sorted according to the score, to obtaine the final document's sorting result.
 
 Use the trained LambdaRank model to continue the prediction:
 
@@ -289,7 +289,7 @@ def event_handler(event):
 
 
 ## Conclusion
-LTR is widely used in real life. The construction method of ranking model can generally be divided into PointWise, Pairwise, Listwise. this example adopt the LETOR mq2007 data as an example, expounds the classic method of RankNet in Pairwise and the LambdaRank in Listwise method, shows how to use PaddlePaddle framework to structure the corresponding sorting model, and provides a sample used the custom data types. Paddlepaddles provides a flexible programming interface. At the same time, with using a set of code in a single GPU, The LTR type is implemented by the multi-machine's distributed multi-gpu. 
+LTR is widely used in real life. The construction method of ranking model can generally be divided into PointWise, Pairwise, Listwise. this example adopt the LETOR mq2007 data as an example, expounds the classic method of RankNet in Pairwise and the LambdaRank in Listwise method, shows how to use PaddlePaddle framework to structure the corresponding sorting model, and provides a sample used the custom data types. Paddlepaddles provides a flexible programming interface. At the same time, with using a set of code in a single GPU, The LTR type is implemented by the multi-machine's distributed multi-gpu.
 ## Attention
 1. As a demonstration example of LTR, this example is a small network size. In the application, it is necessary to adjust the network complexity in combination with the actual situation and reset the network scale.
 2. In this case, the feature vectors in the experimental data are the joint features of the query-document. When using the independent features of the query-document, [DSSM](https://github.com/PaddlePaddle/models/tree/develop/dssm) can be used to build the network.
